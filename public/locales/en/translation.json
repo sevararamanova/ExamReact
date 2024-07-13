@@ -1,0 +1,4 @@
+{ 
+    "navbar": "Hello",
+    "views" : "Article Views: {{views_count}} views"
+}
