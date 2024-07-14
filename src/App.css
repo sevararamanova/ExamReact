@@ -7,7 +7,6 @@
 
 .container {
   width: 1440px;
-  height: 3000px;
+  height: auto;
   margin: 0px auto;
-  border:1px solid red;
 }

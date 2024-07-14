@@ -4,6 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
+    box-shadow: 2px 2px 10px 5px rgba(128, 128, 128, 0.187);
   }
   
   .navbar__profile, .navbar__icon, .navbar__cart {

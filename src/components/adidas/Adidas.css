@@ -1,0 +1,36 @@
+.adidas {
+    background-image: 
+ url('../../images/Rectangle.png');
+    background-size: cover;
+    background-position: center;
+    height:  653.73px;
+    width: 100%;
+    margin-top: 180px;
+  }
+  
+  .adidas img {
+    position: relative;
+    left:700px;
+    bottom: 5px;
+  }
+
+  .content {
+    color:white;
+    font-size: 35px;
+    position: relative;
+    bottom:380px;
+    margin-left: 10px;
+  }
+
+  .content p {
+    margin-top: 20px;
+    font-size: 27px;
+  }
+
+  .content a {
+    color:white;
+    position: relative;
+    top:30px;
+    
+    
+  }

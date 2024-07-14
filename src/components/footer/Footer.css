@@ -1,0 +1,50 @@
+.footer {
+    background-color:  rgba(188, 221, 254, 1);
+    padding:150px;
+    height:  680.59px;
+}
+
+.footer__links {
+    display:flex;
+}
+
+.links__img {
+    
+  display: flex;
+  gap:20px;
+}
+
+.links__img p {
+    margin-top: 7px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.footer__content p{
+    margin-top: 20px;
+}
+
+.text {
+    margin-left: 90px;
+    margin-top: 25px;
+}
+
+.text  span {
+    font-size: 30px;
+    margin-bottom:20px ;
+
+}
+.text p {
+    margin-top: 20px;
+}
+.text__icons {
+    display: flex;
+    gap:60px;
+    margin-top: 10px;
+    width: 14px;
+    height: 14px;
+}
+
+.bottom {
+    position: relative;
+    top:240px;
+}

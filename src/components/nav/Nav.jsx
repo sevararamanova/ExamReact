@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '../../locales/i18next';
-import { Outlet, Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import human from '../../images/human.png';
 import Icon from '../../images/Icon.png';
@@ -26,22 +26,22 @@ const Nav = () => {
       </div>
 
       <div className='navbar__profile'>
-        <Link to="/profile">
+        <NavLink to="/login">
           <img src={human} alt="human" />
           <p>{t('My profile')}</p>
-        </Link>
+        </NavLink>
       </div>
       <div className='navbar__icon'>
-        <Link to="/">
+        <NavLink to="/">
           <img src={Icon} alt="icon" />
           <p>{t('E-Comm')}</p>
-        </Link>
+        </NavLink>
       </div>
       <div className='navbar__cart'>
-        <Link to="/cart">
+        <NavLink to="/cart">
           <img src={cart} alt="cart" />
           <span className="cart-count">{cartItems.length}</span>
-        </Link>
+        </NavLink>
       </div>
     </div>
   );

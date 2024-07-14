@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate, NavLink } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
+import '../../components/product/ProductDetails.css';
 import '../../App.css';
 
 const ProductDetails = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
+  const { addToCart, removeFromCart, updateCart } = useCart();
+  const [count, setCount] = useState(1);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -20,6 +25,39 @@ const ProductDetails = () => {
     fetchProduct();
   }, [id]);
 
+  const handleAddToCart = () => {
+    addToCart(product, count);
+  };
+
+  const handleRemove = () => {
+    removeFromCart(product.id);
+    navigate('/cart');
+  };
+
+  const handleIncrease = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+    updateCart(product.id, newCount);
+  };
+
+  const handleDecrease = () => {
+    if (count > 1) {
+      const newCount = count - 1;
+      setCount(newCount);
+      updateCart(product.id, newCount);
+    }
+  };
+
+  const handlePrompt = () => {
+    const result = window.prompt("Xarid qilish uchun ro'yhatdan o'ting. Ro'yhatdan o'tasizmi?");
+    if (result) {
+      window.location.href = "/login"; 
+    } else {
+    
+    }
+  };
+  
+
   if (!product) return <div>Loading...</div>;
 
   return (
@@ -29,6 +67,14 @@ const ProductDetails = () => {
       <p>{product.description}</p>
       <p>Price: ${product.price}</p>
       <p>Rating: {product.rating}</p>
+      <div className="count-controls">
+        <button onClick={handleDecrease}>-</button>
+        <span>{count}</span>
+        <button onClick={handleIncrease}>+</button>
+      </div>
+      <button id="red" onClick={handleAddToCart}>Add to Cart</button>
+      <button onClick={handleRemove}>Remove from Cart</button>
+      <button id="blue"onClick={handlePrompt}>Xarid qilish uchun ro'yhatdan o'ting</button>
     </div>
   );
 };
